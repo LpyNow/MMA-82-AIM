@@ -108,6 +108,7 @@
   <script defer src="static/js/bulma-carousel.min.js"></script>
   <script defer src="static/js/bulma-slider.min.js"></script>
   <script defer src="static/js/index.js"></script>
+  <script src="https://code.iconify.design/iconify-icon/2.1.0/iconify-icon.min.js"></script>
   
   <!-- Structured Data for Academic Papers -->
   <script type="application/ld+json">
@@ -241,21 +242,30 @@
         <div class="columns is-centered">
           <div class="column has-text-centered">
             <!-- TODO: Replace with your paper title -->
-            <h1 class="title is-1 publication-title">Academic Project Page</h1>
+            <h1 class="title is-1 publication-title">A New Multi-Domain Benchmark for Micro-Action Recognition and Detection</h1>
             <div class="is-size-5 publication-authors">
               <!-- TODO: Replace with your paper authors and their personal links -->
               <span class="author-block">
-                <a href="FIRST AUTHOR PERSONAL LINK" target="_blank">First Author</a><sup>*</sup>,</span>
+                <a href="https://scholar.google.com/citations?user=vhPSOkEAAAAJ&hl=zh-CN&oi=ao" target="_blank">Yanbin Hao</a><sup>*</sup>,</span>
                 <span class="author-block">
-                  <a href="SECOND AUTHOR PERSONAL LINK" target="_blank">Second Author</a><sup>*</sup>,</span>
+                  <a href="https://scholar.google.com/citations?user=EpYnDCkAAAAJ&hl=zh-CN" target="_blank">Pengyu Liu</a><sup>*</sup>,</span>
                   <span class="author-block">
-                    <a href="THIRD AUTHOR PERSONAL LINK" target="_blank">Third Author</a>
+                    <a  target="_blank">Xin Wei</a></sup>,
+                  </span>
+                  <span class="author-block">
+                    <a target="_blank">Xun Yang</a></sup>,
+                  </span>
+                  <span class="author-block">
+                    <a href="THIRD AUTHOR PERSONAL LINK" target="_blank">Dan Guo</a></sup>,
+                  </span>
+                  <span class="author-block">
+                    <a href="https://scholar.google.com/citations?user=rHagaaIAAAAJ&hl=zh-CN" target="_blank">Meng Wang</a></sup>,
                   </span>
                   </div>
 
                   <div class="is-size-5 publication-authors">
                     <!-- TODO: Replace with your institution and conference/journal info -->
-                    <span class="author-block">Institution Name<br>Conference name and year</span>
+                    <span class="author-block">Hefei University of Technology<br>Submitted to TMM 2026</span>
                     <!-- TODO: Remove this line if no equal contribution -->
                     <span class="eql-cntrb"><small><br><sup>*</sup>Indicates Equal Contribution</small></span>
                   </div>
@@ -264,7 +274,7 @@
                     <div class="publication-links">
                          <!-- TODO: Update with your arXiv paper ID -->
                       <span class="link-block">
-                        <a href="https://arxiv.org/pdf/<ARXIV PAPER ID>.pdf" target="_blank"
+                        <a href="https://arxiv.org/pdf/2606.14096.pdf" target="_blank"
                         class="external-link button is-normal is-rounded is-dark">
                         <span class="icon">
                           <i class="fas fa-file-pdf"></i>
@@ -284,20 +294,31 @@
                     </a>
                   </span>
 
+                  <span class="link-block">
+                    <a href="https://huggingface.co/datasets/lpynow/MAR_plus_plus"
+                      target="_blank"
+                      class="external-link button is-normal is-rounded is-dark">
+                      <span class="icon">
+                        🤗
+                      </span>
+                      <span>Hugging Face</span>
+                    </a>
+                  </span>
+
                   <!-- TODO: Replace with your GitHub repository URL -->
                   <span class="link-block">
-                    <a href="https://github.com/YOUR REPO HERE" target="_blank"
+                    <a href="https://github.com/LpyNow/MMA-82" target="_blank"
                     class="external-link button is-normal is-rounded is-dark">
                     <span class="icon">
                       <i class="fab fa-github"></i>
                     </span>
-                    <span>Code</span>
+                    <span>GitHub</span>
                   </a>
                 </span>
 
                 <!-- TODO: Update with your arXiv paper ID -->
                 <span class="link-block">
-                  <a href="https://arxiv.org/abs/<ARXIV PAPER ID>" target="_blank"
+                  <a href="https://arxiv.org/pdf/2606.14096" target="_blank"
                   class="external-link button is-normal is-rounded is-dark">
                   <span class="icon">
                     <i class="ai ai-arxiv"></i>
@@ -318,15 +339,26 @@
 <section class="hero teaser">
   <div class="container is-max-desktop">
     <div class="hero-body">
-      <!-- TODO: Replace with your teaser video -->
-      <video poster="" id="tree" autoplay controls muted loop height="100%" preload="metadata">
-        <!-- TODO: Add your video file path here -->
-        <source src="static/videos/banner_video.mp4" type="video/mp4">
-      </video>
-      <!-- TODO: Replace with your video description -->
+
+      <div class="has-text-centered">
+        <video
+          id="tree"
+          autoplay
+          controls
+          muted
+          loop
+          playsinline
+          preload="metadata"
+          style="max-width: 700px; width: 50%; height: auto; border-radius: 8px;">
+          <source src="static/videos/example_video.mp4" type="video/mp4">
+          Your browser does not support the video tag.
+        </video>
+      </div>
+
       <h2 class="subtitle has-text-centered">
-        Aliquam vitae elit ullamcorper tellus egestas pellentesque. Ut lacus tellus, maximus vel lectus at, placerat pretium mi. Maecenas dignissim tincidunt vestibulum. Sed consequat hendrerit nisl ut maximus. 
+        Example video of MMA-82 dataset.
       </h2>
+
     </div>
   </div>
 </section>
@@ -341,7 +373,35 @@
         <div class="content has-text-justified">
           <!-- TODO: Replace with your paper abstract -->
           <p>
-            Lorem ipsum dolor sit amet, consectetur adipiscing elit. Proin ullamcorper tellus sed ante aliquam tempus. Etiam porttitor urna feugiat nibh elementum, et tempor dolor mattis. Donec accumsan enim augue, a vulputate nisi sodales sit amet. Proin bibendum ex eget mauris cursus euismod nec et nibh. Maecenas ac gravida ante, nec cursus dui. Vivamus purus nibh, placerat ac purus eget, sagittis vestibulum metus. Sed vestibulum bibendum lectus gravida commodo. Pellentesque auctor leo vitae sagittis suscipit.
+            <p>
+  Micro-actions are short-duration, low-amplitude subtle body movements at the
+  whole-body level that can reveal latent intentions, involuntary reactions,
+  and fine-grained affective changes. Our previous MA-52 benchmark has provided
+  an important foundation for micro-action recognition, but it remains limited
+  in scale, scene diversity, task coverage, and evaluation protocols. To advance micro-action analysis toward more realistic and comprehensive
+  settings, we introduce <strong>MMA-82</strong>, a large-scale multi-domain
+  extension of MA-52. MMA-82 expands the label space from 52 to 82 fine-grained
+  micro-action categories and covers four distinct domains, including laboratory
+  interviews, street interviews, psychiatric patient interviews, and
+  emotion-rich television videos, resulting in 79,574 annotated instances from
+  454 subjects. Built upon MMA-82, we establish two core tasks:
+  <strong>Micro-Action Recognition</strong> and
+  <strong>Multi-label Micro-Action Detection</strong>. For recognition, we
+  further define in-domain and cross-domain protocols, including few-shot and
+  zero-shot settings, to evaluate model robustness, transferability, and
+  generalization. Extensive experiments show that current methods still struggle with realistic
+  micro-action understanding, especially under domain shift, long-tailed
+  category distributions, and complex temporal localization. Beyond
+  benchmarking, we investigate the relationship between micro-actions and
+  emotion, showing that micro-actions are strongly associated with emotional
+  states and provide complementary cues to facial micro-expressions for
+  improved emotion recognition. These results demonstrate that MMA-82 serves as a comprehensive and
+  challenging benchmark for realistic micro-action analysis and a valuable
+  resource for human-centered AI. MMA-82 is available at
+  <a href="https://github.com/LpyNow/MMA-82" target="_blank">
+    https://github.com/LpyNow/MMA-82
+  </a>.
+</p>
           </p>
         </div>
       </div>
@@ -457,10 +517,10 @@
 <section class="hero is-small is-light">
   <div class="hero-body">
     <div class="container">
-      <h2 class="title">Poster</h2>
+      <h2 class="title">Our Paper</h2>
 
       <!-- TODO: Replace with your poster PDF -->
-      <iframe  src="static/pdfs/sample.pdf" width="100%" height="550">
+      <iframe  src="static/pdfs/MAR__TMM2026.pdf" width="100%" height="550">
           </iframe>
         
       </div>
@@ -480,12 +540,15 @@
           <span class="copy-text">Copy</span>
         </button>
       </div>
-      <pre id="bibtex-code"><code>@article{YourPaperKey2024,
-  title={Your Paper Title Here},
-  author={First Author and Second Author and Third Author},
-  journal={Conference/Journal Name},
-  year={2024},
-  url={https://your-domain.com/your-project-page}
+      <pre id="bibtex-code"><code>@misc{hao2026newmultidomainbenchmarkmicroaction,
+      title={A New Multi-Domain Benchmark for Micro-Action Recognition and Detection}, 
+      author={Yanbin Hao and Pengyu Liu and Xing Wei and Xun Yang and Dan Gu and Meng Wang},
+      year={2026},
+      eprint={2606.14096},
+      archivePrefix={arXiv},
+      primaryClass={cs.CV},
+      url={https://arxiv.org/abs/2606.14096}, 
+      }
 }</code></pre>
     </div>
 </section>
