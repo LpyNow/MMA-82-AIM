@@ -1,8 +1,6 @@
 window.HELP_IMPROVE_VIDEOJS = false;
 
-const GITHUB_REPO_API_URL = 'https://api.github.com/repos/LpyNow/MMA-82';
-const GITHUB_STAR_CACHE_KEY = 'mma82.githubStars';
-const GITHUB_STAR_CACHE_TTL = 10 * 60 * 1000;
+const GITHUB_STAR_BADGE_JSON_URL = 'https://img.shields.io/github/stars/LpyNow/MMA-82.json';
 
 function toggleMoreWorks() {
   const dropdown = document.getElementById('moreWorksDropdown');
@@ -132,40 +130,6 @@ function setupMoreWorksDismissal() {
   });
 }
 
-function formatGitHubStarCount(count) {
-  return count.toLocaleString('en-US');
-}
-
-function readCachedGitHubStars() {
-  try {
-    const cachedValue = window.localStorage.getItem(GITHUB_STAR_CACHE_KEY);
-    const cachedStars = cachedValue ? JSON.parse(cachedValue) : null;
-
-    if (!cachedStars || typeof cachedStars.count !== 'number' || typeof cachedStars.timestamp !== 'number') {
-      return null;
-    }
-
-    return cachedStars;
-  } catch (error) {
-    return null;
-  }
-}
-
-function writeCachedGitHubStars(count) {
-  try {
-    window.localStorage.setItem(GITHUB_STAR_CACHE_KEY, JSON.stringify({
-      count,
-      timestamp: Date.now()
-    }));
-  } catch (error) {}
-}
-
-function setGitHubStarCount(countElement, count) {
-  const formattedCount = formatGitHubStarCount(count);
-  countElement.textContent = formattedCount;
-  countElement.setAttribute('aria-label', `${formattedCount} GitHub stars`);
-}
-
 function setupGitHubStarCount() {
   const countElement = document.getElementById('github-star-count');
 
@@ -173,36 +137,26 @@ function setupGitHubStarCount() {
     return;
   }
 
-  const cachedStars = readCachedGitHubStars();
-
-  if (cachedStars) {
-    setGitHubStarCount(countElement, cachedStars.count);
-  }
-
-  if (cachedStars && Date.now() - cachedStars.timestamp < GITHUB_STAR_CACHE_TTL) {
-    return;
-  }
-
-  window.fetch(GITHUB_REPO_API_URL, { cache: 'no-store' })
+  window.fetch(GITHUB_STAR_BADGE_JSON_URL)
     .then((response) => {
       if (!response.ok) {
-        throw new Error('Unable to load GitHub stars');
+        throw new Error('Unable to load GitHub star badge');
       }
 
       return response.json();
     })
-    .then((repository) => {
-      if (typeof repository.stargazers_count !== 'number') {
+    .then((badge) => {
+      const starCount = badge.message || badge.value;
+
+      if (!starCount) {
         throw new Error('Missing GitHub star count');
       }
 
-      setGitHubStarCount(countElement, repository.stargazers_count);
-      writeCachedGitHubStars(repository.stargazers_count);
+      countElement.textContent = starCount;
+      countElement.setAttribute('aria-label', `${starCount} GitHub stars`);
     })
     .catch(() => {
-      if (!cachedStars) {
-        countElement.textContent = '--';
-      }
+      countElement.textContent = '--';
     });
 }
 

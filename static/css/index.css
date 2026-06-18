@@ -83,17 +83,22 @@ body {
 }
 
 .github-star-button {
-  gap: 0.15rem;
+  display: inline-flex;
+  align-items: center;
+  gap: 0.2rem;
 }
 
 .github-star-count {
   display: inline-flex;
   align-items: center;
-  min-width: 2ch;
-  margin-left: 0.35rem;
-  padding-left: 0.65rem;
-  border-left: 1px solid rgba(255, 255, 255, 0.32);
+  justify-content: center;
+  min-width: 1.8em;
+  margin-left: 0.25rem;
+  padding-left: 0.55rem;
+  border-left: 1px solid rgba(255, 255, 255, 0.28);
+  font: inherit;
   font-variant-numeric: tabular-nums;
+  line-height: 1;
 }
 
 .dnerf {
