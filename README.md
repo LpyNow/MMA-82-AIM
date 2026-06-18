@@ -1,80 +1,53 @@
-# Academic Project Page Template
+# MMA-82
 
-> **Update (September 2025)**: This template has been modernized with better design, SEO, and mobile support. For the original version, see the [original-version branch](https://github.com/eliahuhorwitz/Academic-project-page-template/tree/original-version).
+**MMA-82** is a multi-domain benchmark for micro-action recognition and detection. It extends micro-action analysis from controlled laboratory settings to more realistic and diverse scenarios.
 
-A clean, responsive template for academic project pages.
+This repository hosts the project page for MMA-82:
 
+- Project page: https://lpynow.github.io/MMA-82-AIM/
+- Paper: https://arxiv.org/abs/2606.14096
+- Dataset: https://huggingface.co/datasets/lpynow/MAR_plus_plus
+- Code: https://github.com/LpyNow/MMA-82
 
-Example project pages built using this template are:
-- https://horwitz.ai/probex
-- https://vision.huji.ac.il/probegen
-- https://horwitz.ai/mother
-- https://horwitz.ai/spectral_detuning
-- https://vision.huji.ac.il/ladeda
-- https://vision.huji.ac.il/dsire
-- https://horwitz.ai/podd
-- https://dreamix-video-editing.github.io
-- https://horwitz.ai/conffusion
-- https://horwitz.ai/3d_ads/
-- https://vision.huji.ac.il/ssrl_ad
-- https://vision.huji.ac.il/deepsim
+## Overview
 
+MMA-82 contains fine-grained whole-body micro-action annotations across multiple real-world domains, including laboratory interviews, street interviews, psychiatric patient interviews, and emotion-rich television videos.
 
+Key statistics:
 
-## Start using the template
-To start using the template click on `Use this Template`.
+- 82 micro-action categories
+- 79,574 annotated instances
+- 454 subjects
+- 4 data domains
+- Recognition and multi-label temporal detection tasks
 
-The template uses html for controlling the content and css for controlling the style. 
-To edit the websites contents edit the `index.html` file. It contains different HTML "building blocks", use whichever ones you need and comment out the rest.  
+## Tasks
 
-**IMPORTANT!** Make sure to replace the `favicon.ico` under `static/images/` with one of your own, otherwise your favicon is going to be a dreambooth image of me.
+MMA-82 supports two main tasks:
 
-## What's New
+- **Micro-Action Recognition**: classify trimmed video clips into micro-action categories.
+- **Multi-label Micro-Action Detection**: localize and classify micro-actions in untrimmed videos.
 
-- Modern, clean design with better mobile support
-- Improved SEO with proper meta tags and structured data
-- Performance improvements (lazy loading, optimized assets)
-- More Works dropdown
-- Copy button for BibTeX citations
-- Better accessibility
+The benchmark also includes in-domain, cross-domain, few-shot, and zero-shot evaluation settings.
 
-## Components
+## Documentation
 
-- Teaser video
-- Image carousel
-- YouTube video embedding
-- Video carousel
-- PDF poster viewer
-- BibTeX citation
+This README only provides a brief introduction. Full dataset details, download instructions, annotations, benchmark protocols, and usage examples will be maintained in separate Markdown files.
 
-## Customization
+## Citation
 
-The HTML file has TODO comments showing what to replace:
-
-- Paper title, authors, institution, conference
-- Links (arXiv, GitHub, etc.)
-- Abstract and descriptions  
-- Videos, images, and PDFs
-- Related works in the dropdown
-- Meta tags for SEO and social sharing
-
-### Meta Tags
-The template includes meta tags for better search engine visibility and social media sharing. These appear in the `<head>` section and help with:
-- Google Scholar indexing
-- Social media previews (Twitter, Facebook, LinkedIn)
-- Search engine optimization
-
-Create a 1200x630px social preview image at `static/images/social_preview.png`.
-
-## Tips
-
-- Compress images with [TinyPNG](https://tinypng.com)
-- Use YouTube for large videos (>10MB)  
-- Replace the favicon in `static/images/`
-- Works with GitHub Pages
+```bibtex
+@misc{hao2026newmultidomainbenchmarkmicroaction,
+  title={A New Multi-Domain Benchmark for Micro-Action Recognition and Detection},
+  author={Hao, Yanbin and Liu, Pengyu and Wei, Xing and Yang, Xun and Guo, Dan and Wang, Meng},
+  year={2026},
+  eprint={2606.14096},
+  archivePrefix={arXiv},
+  primaryClass={cs.CV},
+  url={https://arxiv.org/abs/2606.14096}
+}
+```
 
 ## Acknowledgments
-Parts of this project page were adopted from the [Nerfies](https://nerfies.github.io/) page.
 
-## Website License
-<a rel="license" href="http://creativecommons.org/licenses/by-sa/4.0/"><img alt="Creative Commons License" style="border-width:0" src="https://i.creativecommons.org/l/by-sa/4.0/88x31.png" /></a><br />This work is licensed under a <a rel="license" href="http://creativecommons.org/licenses/by-sa/4.0/">Creative Commons Attribution-ShareAlike 4.0 International License</a>.
+The project page is adapted from the Academic Project Page Template and the Nerfies project page.
