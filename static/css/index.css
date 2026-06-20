@@ -82,13 +82,15 @@ body {
     margin: 8px 4px;
 }
 
-.github-star-button {
+.github-star-button,
+.hf-like-button {
   display: inline-flex;
   align-items: center;
   gap: 0.2rem;
 }
 
-.github-star-count {
+.github-star-count,
+.hf-like-count {
   display: inline-flex;
   align-items: center;
   justify-content: center;
@@ -99,6 +101,10 @@ body {
   font: inherit;
   font-variant-numeric: tabular-nums;
   line-height: 1;
+}
+
+.hf-like-icon {
+  margin-left: 0.15rem;
 }
 
 .dnerf {

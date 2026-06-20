@@ -1,6 +1,7 @@
 window.HELP_IMPROVE_VIDEOJS = false;
 
 const GITHUB_STAR_BADGE_JSON_URL = 'https://img.shields.io/github/stars/LpyNow/MMA-82.json';
+const HUGGING_FACE_DATASET_API_URL = 'https://huggingface.co/api/datasets/lpynow/MAR_plus_plus';
 
 function toggleMoreWorks() {
   const dropdown = document.getElementById('moreWorksDropdown');
@@ -130,6 +131,49 @@ function setupMoreWorksDismissal() {
   });
 }
 
+function formatCompactCount(value) {
+  const numericValue = Number(value);
+
+  if (!Number.isFinite(numericValue)) {
+    return null;
+  }
+
+  return new Intl.NumberFormat('en', {
+    notation: 'compact',
+    maximumFractionDigits: 1
+  }).format(numericValue);
+}
+
+function setupHuggingFaceLikeCount() {
+  const countElement = document.getElementById('hf-like-count');
+
+  if (!countElement || !window.fetch) {
+    return;
+  }
+
+  window.fetch(HUGGING_FACE_DATASET_API_URL)
+    .then((response) => {
+      if (!response.ok) {
+        throw new Error('Unable to load Hugging Face dataset metadata');
+      }
+
+      return response.json();
+    })
+    .then((dataset) => {
+      const likeCount = formatCompactCount(dataset.likes);
+
+      if (likeCount === null) {
+        throw new Error('Missing Hugging Face like count');
+      }
+
+      countElement.textContent = likeCount;
+      countElement.setAttribute('aria-label', `${likeCount} Hugging Face likes`);
+    })
+    .catch(() => {
+      countElement.textContent = '--';
+    });
+}
+
 function setupGitHubStarCount() {
   const countElement = document.getElementById('github-star-count');
 
@@ -165,6 +209,7 @@ document.addEventListener('DOMContentLoaded', () => {
   setupVideoAutoplayWhenVisible();
   setupMoreWorksDismissal();
   setupGitHubStarCount();
+  setupHuggingFaceLikeCount();
 
   if (window.bulmaSlider && typeof window.bulmaSlider.attach === 'function') {
     window.bulmaSlider.attach();
