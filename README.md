@@ -6,7 +6,7 @@ This repository hosts the project page for MMA-82:
 
 - Project page: https://lpynow.github.io/MMA-82-AIM/
 - Paper: https://arxiv.org/abs/2606.14096
-- Dataset: https://huggingface.co/datasets/lpynow/MAR_plus_plus
+- Dataset: https://huggingface.co/datasets/lpynow/MMA-82
 - Code: https://github.com/LpyNow/MMA-82
 
 ## Overview
